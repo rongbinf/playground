@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>有備而來</title>
+		<meta name="description" content="Note: a note.">
+		<meta name="author" content="Hargow">
+		<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+		<link rel="icon" type="image/png" href="img/note.ico">
+		<style>
+		*, *:before, *:after {
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+		}
+		body {
+			font-family: Arial, "Arial Unicode MS", sans-serif;
+			font-size: 0.8rem;
+			background-color: #2f4331;
+		}
+		main {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+		}
+		.note-1 {
+			z-index: 100;
+			display: flex;
+			width: 300px;
+			height: 120px;
+			padding: 20px;
+			/*box-shadow: 2px 2px 2px #ccc;*/
+			transform: rotate(-8deg);
+			background-color: #fdffc2;
+		}
+		.note-2 {
+			z-index: 80;
+			display: flex;
+			width: 200px;
+			height: 200px;
+			padding: 20px;
+			/*box-shadow: 2px 2px 2px #ccc;*/
+			transform: rotate(2deg);
+			background-color: #cef6ff;
+		}
+		.note-3 {
+			z-index: 60;
+			display: flex;
+			width: 150px;
+			height: 120px;
+			padding: 20px;
+			/*box-shadow: 2px 2px 2px #ccc;*/
+			transform: rotate(-3deg);
+			background-color: #e0ffe9;
+		}
+		.name {
+			display: flex;
+			margin-top: auto;
+			text-align: right;
+		}
+		p {
+			line-height: 1.2rem;
+		}
+		a {
+			color: #000;
+		}
+		a:hover {
+			font-style: normal;
+			text-decoration: line-through;
+		}
+		::selection {
+    		background: #000; 
+    		color: #fff;
+		}
+		::-moz-selection {
+  		  	background: #000; 
+    		color: #fff;
+		}
+		::-webkit-selection {
+    		background: #000; 
+    		color: #fff;
+		}
+		</style>
+	</head>
+	<body>
+		<main>
+			<div class="note-1">
+				<div class="content">
+					<p>이제 다 알겠어. . . 모두, 다, 전부, 두루두루</p>
+				</div>
+				<div class="name">
+					<p><a href="https://fanrongbin.com">F</a></p>
+				</div>
+			</div>
+			<div class="note-2">
+				<div class="content">
+					<p>It is known. It is not UNKNOWN. It is real. It is not UNREAL. It reminds me of the past and the future.</p>
+				</div>
+			</div>
+			<div class="note-3">
+				<div class="content">
+					<p>I called it <span style="font-weight: 600; text-decoration: line-through;">NOTE</span>.</p>
+				</div>
+			</div>
+		</main>
+	</body>
+</html>
