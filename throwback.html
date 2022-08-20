@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1 user-scalable=0">
+		<title>: Throwback :</title>
+		<meta name="description" content="\ throwback \">
+		<meta name="author" content="Hargow">
+		<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+		<link rel="icon" type="image/png" href="img/throwback.ico">
+		<style>
+		*, *:before, *:after {
+			box-sizing: border-box;
+		}
+		body {
+			font-family: Arial, "Arial Unicode MS", sans-serif;
+			font-size: 1.1rem;
+			background-color: #fffe00;
+		}
+		main {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+		img {
+			max-width: 50%;
+		}
+		.box {
+		    border-radius: 25px;
+		    border: 1px solid #000;
+		    background-color: #fff;
+		    padding: 20px;
+		    width: 300px;
+		    height: 100px;
+		    position: absolute;
+		    left: 40%;
+		    top: 40%;
+		}
+		@media only screen and (max-width: 1000px) {
+			.box {
+				left: 30%;
+				width: 200px;
+				height: 100px;
+			}
+		}
+		a {
+			color: #000;
+		}
+		a:hover {
+			font-style: normal;
+			text-decoration: line-through;
+		}
+		::selection {
+    		background: #000; 
+    		color: #fff;
+		}
+		::-moz-selection {
+  		  	background: #000; 
+    		color: #fff;
+		}
+		::-webkit-selection {
+    		background: #000; 
+    		color: #fff;
+		}
+		</style>
+	</head>
+	<body>
+		<main>
+			<div style="margin-top: 3rem;">
+				<p>如果你相信這個世界本就由秩序構成</p>
+				<p>而所有的混亂都是人為的</p>
+				<p>那麼你也會擁有屬於你自己真正的秩序</p>
+			</div>
+			<div>
+				<img src="img/hargow.webp">
+			</div>
+			<div class="box">
+				<p>Order now?</p>
+				<div style="position: relative; left: 80%; padding: 0.2rem;"><button type="button" onclick="change()" style="padding: 1rem;" id="button">yes</button></div>
+			</div>
+			<script>
+		    function change() {
+		        x = document.getElementById("button")
+		        x.innerHTML = "yes?";
+		    }
+</script>
+		</main>
+	</body>
+</html>
