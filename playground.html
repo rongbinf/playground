@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>Playground</title>
+		<meta name="description" content="An expansion to isolate.">
+		<meta name="author" content="Hargow">
+		<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+		<link rel="icon" type="image/png" href="img/playground.ico">
+		<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Selekkt/skelet@3.3.0/css/skelet.min.css">
+		<style>
+		:root {
+		--fontSize: calc(100vw / 80);
+		--hHeading: 5vw;
+		--siteMarg: 5rem;
+		--fontFamily: Arial, "Arial Unicode MS", sans-serif;
+		--linkColor: #000fff;
+		--linkHover: #000;
+		}
+		p {
+			font-weight: 200;
+		}
+		.source {
+			font-size: 1.3rem;
+			color: #888;
+		}
+		a:hover {
+			color: #000;
+			text-decoration: line-through;
+		}
+		#app { padding: 2rem var(--siteMarg); max-width: 1600px; margin: 0 auto; }
+		.h1 { font-size: var(--hHeading); letter-spacing: 0 }
+		.space4 { display: block; width: 100%; margin: 2vw auto;}
+		@media (max-width: 1200px) {
+		:root {
+		--fontSize: 1.5rem;
+		--hHeading: 2.8rem;
+		--siteMarg: 2rem;
+		}
+		x-flex > x-col { max-width: 100%; }
+		}
+		.break {
+			margin-left: 30px;
+		}
+		</style>
+	</head>
+	<body data-mode="light">
+		<div id="app">
+			<main>
+				<x-grid columns="2">
+				<x-col span="2+1"><del>遊樂場</del></x-col>
+				</x-grid>
+				<x-grid columns="2">
+				<x-col span="1"><p>被<a href="love.html">愛</a>和被理想化的<a href="voice.html">聲音</a>，<br>死者的聲音，或者那些失蹤的<br>等同死者的聲音。</p><p>有時候它們在夢中對我們說話；<br>有時候在深思中，心靈會聽到<a href="note.html">它們</a>。</p><p>隨著它們的聲音<a href="flower.html">而來</a>，<a href="on-sale.html">我們</a>生命中<br>最初的詩歌的聲音也重返片刻——<br>深夜裡的音樂，遙遠，逐漸消失。</p></x-col>
+				</x-grid>
+				<span class="space4"></span>
+				<x-grid columns="2">
+				<x-col span="1"><p class="source">聲音（1904）卡瓦菲斯<span class="break"></span>黄灿然 译</p></x-col>
+				</x-grid>
+				<x-grid columns="2">
+					<x-col span="2+1"><del>놀이터</del></x-col>
+					<x-col span="2+1"><del>Playground</del></x-col>
+				</x-grid>
+			</main>
+			<footer class="text-end"><a href="https://github.com/Selekkt/skelet/">Skelet</a>, Github Pages</footer>
+		</div>
+	</body>
+</html>
