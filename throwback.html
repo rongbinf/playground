@@ -15,7 +15,8 @@
 		}
 		body {
 			font-family: Arial, "Arial Unicode MS", sans-serif;
-			font-size: 1.1rem;
+			font-size: 1rem;
+			line-height: 1.5rem;
 			background-color: #fffe00;
 		}
 		main {
@@ -26,24 +27,6 @@
 		}
 		img {
 			max-width: 50%;
-		}
-		.box {
-		    border-radius: 25px;
-		    border: 1px solid #000;
-		    background-color: #fff;
-		    padding: 20px;
-		    width: 300px;
-		    height: 100px;
-		    position: absolute;
-		    left: 40%;
-		    top: 40%;
-		}
-		@media only screen and (max-width: 1000px) {
-			.box {
-				left: 30%;
-				width: 200px;
-				height: 100px;
-			}
 		}
 		a {
 			color: #000;
@@ -64,28 +47,161 @@
     		background: #000; 
     		color: #fff;
 		}
+		.window {
+		    z-index: 2;
+		    border: 1px solid black;
+		    background-color: #ffffff88;
+		    width: 400px;
+		    position: absolute;
+		    -webkit-touch-callout: none;
+		    -webkit-user-select: none;
+		    -khtml-user-select: none;
+		    -moz-user-select: none;
+		    -ms-user-select: none;
+		    user-select: none;
+		}
+
+		.window .window-bar {
+		    padding-left: 6px;
+		    padding-top: 3px;
+		    cursor: move;
+		}
+
+		.window .window-bar .window-close {
+		    cursor: pointer;
+		    display: inline-block;
+		    position: absolute;
+		    top: 3px;
+		    right: 3px;
+		    background: none;
+			border: 1px solid black;
+		    width: 14px;
+		    height: 14px;
+		    padding-left: 2px;
+		    padding-top: 2px;
+		}
+
+		.window-body {
+		    margin: 1em;
+		}
+		#windowtoggle {
+			position: absolute;
+			top: 70%;
+			background-color: black;
+		    width: 14px;
+		    height: 14px;
+		}
+		#windowtoggle:active {
+			background: none;
+			border: 1px solid black;
+		}
+		.para {
+			padding: 2rem;
+		}
 		</style>
 	</head>
 	<body>
 		<main>
 			<div style="margin-top: 3rem;">
-				<p>如果你相信這個世界本就由秩序構成</p>
-				<p>而所有的混亂都是人為的</p>
-				<p>那麼你也會擁有屬於你自己真正的秩序</p>
+				<p>2020-05-09 22:56<br>Be water. Flow.</p>
+				
+				
+			</div><a id="windowtoggle" type="button"></a>
+			<div class="window" id="window">
+    <div class="window-bar">
+        <div>
+				<p class="para">水是平衡的。成為水，就收穫平衡。這種平衡，不是無響應的麻木狀態，也不像桌椅板凳一樣四平八穩，它的轉換是迅速的、悄無聲息的，以至於即使它一直在擺動，人們卻無法感知這種擺動。所以它可以融合進一切的事物裡，也應該在融合進一切事物當中後消失。</p>
 			</div>
-			<div>
-				<img src="img/hargow.webp">
-			</div>
-			<div class="box">
-				<p>Order now?</p>
-				<div style="position: relative; left: 80%; padding: 0.2rem;"><button type="button" onclick="change()" style="padding: 1rem;" id="button">yes</button></div>
-			</div>
-			<script>
-		    function change() {
-		        x = document.getElementById("button")
-		        x.innerHTML = "yes?";
-		    }
-</script>
+        <span class="window-close">
+           
+        </span>
+    </div>
+</div>
 		</main>
+		<script type="text/javascript">
+			var state = {
+    isDragging: false,
+    isHidden: true,
+    xDiff: 0,
+    yDiff: 0,
+    x: 50,
+    y: 500
+};
+
+function ready(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading"){
+        fn();
+    } else {
+        document.addEventListener('DOMContentLoaded', fn);
+    }
+}
+
+function renderWindow(w, myState) {
+    if (state.isHidden) {
+        w.style.display = 'none';
+    } else {
+        w.style.display = '';
+    }
+
+    w.style.transform = 'translate(' + myState.x + 'px, ' + myState.y + 'px)';
+}
+
+function clampX(n) {
+    return Math.min(Math.max(0, 0),
+                    // container width - window width
+                    500 - 400);
+}
+
+function clampY(n) {
+    return Math.min(Math.max(n, 0), 800);
+}
+
+function onMouseMove(e) {
+    if (state.isDragging) {
+        state.x = clampX(e.pageX - state.xDiff);
+        state.y = clampY(e.pageY - state.yDiff);
+    }
+
+    // Update window position
+    var w = document.getElementById('window');
+    renderWindow(w, state);
+}
+
+function onMouseDown(e) {
+    state.isDragging = true;
+    state.xDiff = e.pageX - state.x;
+    state.yDiff = e.pageY - state.y;
+}
+
+function onMouseUp() {
+    state.isDragging = false;
+}
+
+function closeWindow() {
+    state.isHidden = true;
+
+    var w = document.getElementById('window');
+    renderWindow(w, state);
+}
+
+ready(function() {
+    var w = document.getElementById('window');
+    renderWindow(w, state);
+
+    var windowBar = document.querySelectorAll('.window-bar');
+    windowBar[0].addEventListener('mousedown', onMouseDown);
+    document.addEventListener('mousemove', onMouseMove);
+    document.addEventListener('mouseup', onMouseUp);
+
+    var closeButton = document.querySelectorAll('.window-close');
+    closeButton[0].addEventListener('click', closeWindow);
+
+    var toggleButton = document.getElementById('windowtoggle');
+    toggleButton.addEventListener('click', function() {
+        state.isHidden = !state.isHidden;
+        renderWindow(w, state);
+    });
+});
+		</script>
 	</body>
 </html>
