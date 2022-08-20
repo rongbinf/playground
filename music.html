@@ -148,4 +148,11 @@
 				<p><a href="playground.html">遊樂場</a></p>
 			</div>
 		</body>
+		<script type="text/javascript">
+			document.documentElement.addEventListener('touchstart', function (event) {
+			  if (event.touches.length > 1) {
+			    event.preventDefault();
+			  }
+			}, false);
+		</script>
 	</html>
