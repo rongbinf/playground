@@ -16,21 +16,31 @@
 		body {
 			font-family: Arial, "Arial Unicode MS", sans-serif;
 			font-size: 0.8rem;
-			background: url("img/IMG_3692.webp");
+			/*background: url("img/IMG_3692.webp");
 			background-position: center 4rem;
 			background-repeat: no-repeat;
-			background-size: 30%;
+			background-size: 30%;*/
+		}
+		img {
+			width: 30%;
+			position: relative;
+			top: 50%;
+			left: 50%;
+		}
+		img:hover {
+			opacity: 0.3;
 		}
 		@media only screen and (max-width: 1000px) {
-			body {
-				background-size: 50%;
+			img {
+				width: 40%;
 			}
 		}
 		@media only screen and (max-width: 700px) {
-			body {
-				background-size: 70%;
+			img {
+				width: 50%;
 			}
 		}
+		
 		main {
 			display: flex;
 			justify-content: center;
@@ -77,12 +87,13 @@
 	</head>
 	<body>
 		<main>
+			<a href="covid-19.html"><img src="img/IMG_3692.webp"></a>
 			<div class="playground">
 				<p><a href="playground.html">playground</a></p>
 			</div>
-			<div class="blog">
+			<!--div class="blog">
 				<p><a href="https://fanrongbin.com">fanrongbin.com</a></p>
-			</div>
+			</div-->
 		</main>
 	</body>
 	<script type="text/javascript">
