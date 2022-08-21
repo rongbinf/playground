@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1 user-scalable=0">
+		<title>尋物啓事</title>
+		<meta name="description" content="失物招領">
+		<meta name="author" content="Hargow">
+		<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+		<link rel="icon" type="image/png" href="img/lost-and-found.ico">
+		<style>
+		*, *:before, *:after {
+			box-sizing: border-box;
+		}
+		body {
+			font-family: Arial Unicode MS", sans-serif;
+			font-size: 1rem;
+			background-color: #fff4ef;
+		}
+		main {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+		img {
+			max-width: 50%;
+		}
+		a {
+			color: #b86540;
+		}
+		a:hover {
+			font-style: normal;
+			text-decoration: line-through;
+		}
+		::selection {
+    		background: #000; 
+    		color: #fff;
+		}
+		::-moz-selection {
+  		  	background: #000; 
+    		color: #fff;
+		}
+		::-webkit-selection {
+    		background: #000; 
+    		color: #fff;
+		}
+		#frame {
+			margin-left: 7px;
+			margin-right: 10px;
+			font-size: 0.8rem;
+		}
+		#mirror {
+			text-align: center;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%,-50%);
+		}
+		</style>
+	</head>
+	<body>
+		<main>
+			<div>
+				<script async src="/src/busuanzi.pure.mini.js"></script>
+            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_site_pv"></span>人亦来过这里。</span>
+			</div>
+			<div>
+				<!--カウンター画像からは配布サイトへリンクが設定されています。また、誤作動、誤表示の原因となりますのでコードの改変、改行は行わないで下さい。
+このコメント部分は削除して頂いても結構です。-->
+<a href="https://www.free-counter.jp/"><img src="https://www.f-counter.net/j/49/1661093410/" alt="アクセスカウンター"></a>
+
+			</div>
+		</main>
+		<script type="text/javascript">
+			     document.documentElement.addEventListener(
+			        "touchstart",
+			        function(event) {
+			          if (event.touches.length > 1) {
+			            event.preventDefault();
+			          }
+			        },
+			        false
+			      );
+
+			      var lastTouchEnd = 0;
+			      document.documentElement.addEventListener(
+			        "touchend",
+			        function(event) {
+			          var now = Date.now();
+			          if (now - lastTouchEnd <= 300) {
+			            event.preventDefault();
+			          }
+			          lastTouchEnd = now;
+			        },
+			        false
+			      );
+
+			      document.addEventListener("gesturestart", function(event) {
+			        event.preventDefault();
+			      });
+		</script>
+	</body>
+</html>
