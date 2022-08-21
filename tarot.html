@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1 user-scalable=0">
+		<title>%</title>
+		<meta name="description" content="- I CAN SEE YOU -">
+		<meta name="author" content="Hargow">
+		<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+		<link rel="icon" type="image/png" href="img/tarot.ico">
+		<style type="text/css">
+		*, *:before, *:after {
+			box-sizing: border-box;
+		}
+		body {
+			margin: 10vh;
+			font-family: Arial, "Arial Unicode MS", sans-serif;
+			font-size: 0.8rem;
+			letter-spacing: 0.15rem;
+			background-color: #7300ca;
+			background: linear-gradient(10deg, #ac3fff, #7300ca, #5a00a0);
+		    background-size: 200% 200%;
+		    animation: gradient 2s ease-in-out infinite;
+		    height: 100vh;
+		}
+		@keyframes gradient {
+			0% {
+				background-position: 0% 50%;
+			}
+			50% {
+				background-position: 100% 50%;
+			}
+			100% {
+				background-position: 0% 50%;
+			}
+		}
+		main {
+			justify-content: center;
+			align-items: center;
+			margin: 5rem;
+		}
+		.grid {
+			display: grid;
+			grid-template-columns: 14rem 14rem;
+			grid-auto-rows: auto;
+			grid-gap: 2rem;
+			overflow: hidden;
+			flex-wrap: wrap;
+		}
+		.module {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			height: 40vh;
+			margin-left: 10px;
+			margin-right: 10px;
+			flex: 1 1 200px;
+			background-color: #ffffff30;
+			border: 1px #ffffff50 solid;
+		}
+		#info1, #info2 {
+			border: none;
+			background: none;
+		}
+		#info1:hover, #info2:hover {
+			background: none;
+		}
+		@supports (display: grid) {
+			.module {
+				margin: 0;
+			}
+		}
+		.innerText {
+			display: none;
+			margin: 1rem;
+		}
+		.module:hover, .module:active {
+			background-color: #ffffff30;
+			border: 1px #ffffff91 solid;
+		}
+		.module:hover .innerText, .module:active .innerText  {
+			display: block;
+		}
+		.module:focus .innerText  {
+			display: block;
+		}
+		.title {
+			font-weight: 600;
+			color: #fff;
+			letter-spacing: 0;
+		}
+		.footer {
+			position: relative;
+			text-align: center;
+			padding: 5rem;
+			letter-spacing: 0;
+		}
+		.tag {
+			margin-top: -0.5rem;
+			font-size: 0.7rem;
+			letter-spacing: 0;
+		}
+		#side5 {
+			letter-spacing: 0;
+		}
+		img {
+			max-width: 10%;
+		}
+		p {
+			color: #ffffffba;
+		}
+		a {
+			color: #ffffff;
+		}
+		a:hover {
+			color: #ffffff;
+			font-style: normal;
+			text-decoration: line-through;
+		}
+		::selection {
+		background: #000;
+		color: #fff;
+		}
+		::-moz-selection {
+			background: #000;
+		color: #fff;
+		}
+		::-webkit-selection {
+		background: #000;
+		color: #fff;
+		}
+		@media only screen and (max-width: 1000px) {
+			.grid {
+				grid-template-columns: 14rem;
+				margin: 0;
+			}
+			main {
+				margin: 2rem;
+			}
+		}
+		</style>
+		<style type="text/css">
+			#wrapD3Cube {
+			    width: 250px;
+			    height: 213px;
+			    margin: 20px auto;
+			}
+			#D3Cube {
+			    width: 112px;
+			    height: 112px;
+			    top: 50px;
+			    transform-style: preserve-3d;
+			    -moz-transform-style: preserve-3d;
+			    -webkit-transform-style: preserve-3d;
+			    transform: rotateX(-22deg) rotateY(-38deg) rotateZ(0deg);
+			    -moz-transform: rotateX(-22deg) rotateY(-38deg) rotateZ(0deg);
+			    -webkit-transform: rotateX(-22deg) rotateY(-38deg) rotateZ(0deg);
+			    margin: auto;
+			    position: relative;
+			    -moz-transform-style: preserve-3d;
+			    transform-style: preserve-3d;
+			    -webkit-transition: all 0.5s ease-in-out;
+			    transition: all 0.5s ease-in-out;
+			    -webkit-animation: cubeRotation 5s infinite; /* Safari 4.0 - 8.0 */
+			    animation: cubeRotation 5s infinite;
+			}
+			/* Safari 4.0 - 8.0 */
+			@-webkit-keyframes cubeRotation {
+			    0%   {	-webkit-transform: rotateX(-22deg) rotateY(-38deg) rotateZ(0deg);	}
+			    50%   {	-webkit-transform: rotateX(-22deg) rotateY(-128deg) rotateZ(0deg);	}
+			    100%   {	-webkit-transform: rotateX(-22deg) rotateY(-398deg) rotateZ(0deg);	}
+			}
+			/* Standard syntax */
+			@keyframes cubeRotation {
+			    0%   {	transform: rotateX(-22deg) rotateY(-38deg) rotateZ(0deg);	}
+			    50%   {	transform: rotateX(-22deg) rotateY(-238deg) rotateZ(0deg);	}
+			    100%   {	transform: rotateX(-22deg) rotateY(-398deg) rotateZ(0deg);	}
+			}
+			#D3Cube > div {
+			    position: absolute;
+			    -webkit-transition: all 0.5s ease-in-out;
+			    transition: all 0.5s ease-in-out;
+			    width: 112px;
+			    height: 112px;
+			    float: left;
+			    overflow: hidden;
+				opacity: 0.85;
+			}
+			#side1 {
+			    transform: rotatex(90deg) translateX(0px) translateY(0px) translateZ(56px);
+			    -moz-transform: rotatex(90deg) translateX(0px) translateY(0px) translateZ(56px);
+			    -webkit-transform: rotatex(90deg) translateX(0px) translateY(0px) translateZ(56px);
+				background-color: #ffffff60;
+			}
+			#side2 {
+			    transform: rotateY(-90deg) translateX(0px) translateY(0px) translateZ(56px);
+			    -moz-transform: rotateY(-90deg) translateX(0px) translateY(0px) translateZ(56px);
+			    -webkit-transform: rotateY(-90deg) translateX(0px) translateY(0px) translateZ(56px);
+				background-color: #ffffff50;
+			}
+			#side3 {
+			    transform: translateX(0px) translateY(0px) translateZ(56px);
+			    -moz-transform: translateX(0px) translateY(0px) translateZ(56px);
+			    -webkit-transform: translateX(0px) translateY(0px) translateZ(56px);
+				background-color: #ffffff40;
+			}
+			#side4 {
+			    transform: rotateY(90deg) translateX(0px) translateY(0px) translateZ(56px);
+			    -moz-transform: rotateY(90deg) translateX(0px) translateY(0px) translateZ(56px);
+			    -webkit-transform: rotateY(90deg) translateX(0px) translateY(0px) translateZ(56px);
+				background-color: #ffffff30;
+			}
+			#side5 {
+			    transform: rotateY(180deg) translateX(0px) translateY(0px) translateZ(56px);
+			    -moz-transform: rotateY(180deg) translateX(0px) translateY(0px) translateZ(56px);
+			    -webkit-transform: rotateY(180deg) translateX(0px) translateY(0px) translateZ(56px);
+				background-color: #ffffff20;
+			}
+			#side6 {
+			    transform: rotateX(-90deg) translateX(0px) translateY(0px) translateZ(56px);
+			    -moz-transform: rotateX(-90deg) translateX(0px) translateY(0px) translateZ(56px);
+			    -webkit-transform: rotateX(-90deg) translateX(0px) translateY(0px) translateZ(56px);
+				background-color: #ffffff10;
+			}
+		</style>
+	</head>
+	<body>
+		<script>
+			function playAudio(url) {
+				new Audio(url).play();
+			}
+	    </script>
+		<main>
+			<div class="grid">
+				<div class="module" id="info1">
+					<p>T A R O T</p>
+				</div>
+				<div class="module" id="info2">
+					<div id="wrapD3Cube">
+						<div id="D3Cube" onclick="playAudio('audio/tarot.mp3')">
+							<div id="side1"></div>
+							<div id="side2"></div>
+							<div id="side3"></div>
+							<div id="side4"></div>
+							<div id="side5"><p>i have sound.</p></div>
+							<div id="side6"></div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="module">
+					<p>A SUNDAY NIGHT</p>
+					<p class="title innerText">
+						an upright two of wands
+					</p>
+					<p class="tag innerText">權杖 2 (正位)</p>
+				
+			</div>
+		</main>
+		<div class="footer">
+			<p><a href="playground.html">遊樂場</a></p>
+		</div>
+	</body>
+	<script type="text/javascript">
+		document.documentElement.addEventListener('touchstart', function (event) {
+		if (event.touches.length > 1) {
+		event.preventDefault();
+		}
+		}, false);
+	</script>
+	<script type="text/javascript">
+			     document.documentElement.addEventListener(
+			        "touchstart",
+			        function(event) {
+			          if (event.touches.length > 1) {
+			            event.preventDefault();
+			          }
+			        },
+			        false
+			      );
+
+			      var lastTouchEnd = 0;
+			      document.documentElement.addEventListener(
+			        "touchend",
+			        function(event) {
+			          var now = Date.now();
+			          if (now - lastTouchEnd <= 300) {
+			            event.preventDefault();
+			          }
+			          lastTouchEnd = now;
+			        },
+			        false
+			      );
+
+			      document.addEventListener("gesturestart", function(event) {
+			        event.preventDefault();
+			      });
+		</script>
+</html>
