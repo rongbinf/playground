@@ -53,12 +53,32 @@
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
-			height: 40vh;
+			width: 150px;
+			height: 240px;
+			perspective: 600px;
 			margin-left: 10px;
 			margin-right: 10px;
 			flex: 1 1 200px;
-			background-color: #ffffff30;
-			border: 1px #ffffff50 solid;
+		}
+		.card {
+		  background-color: #ffffff30;
+		  width: 100%;
+		  height: 100%;
+		  position: relative;
+		  transition: transform 1s;
+		  transform-style: preserve-3d;
+		}
+		.card__face {
+		  position: absolute;
+		  height: 100%;
+		  width: 100%;
+		  backface-visibility: hidden;
+		}
+		.card__face--back {
+		  transform: rotateY( 180deg );
+		}
+		.card.is-flipped {
+		  transform: rotateY(180deg);
 		}
 		#info1, #info2 {
 			border: none;
@@ -76,9 +96,8 @@
 			display: none;
 			margin: 1rem;
 		}
-		.module:hover, .module:active {
-			background-color: #ffffff30;
-			border: 1px #ffffff91 solid;
+		.module:hover {
+			background: none;
 		}
 		.module:hover .innerText, .module:active .innerText  {
 			display: block;
@@ -229,11 +248,13 @@
 				new Audio(url).play();
 			}
 	    </script>
+	    
 		<main>
 			<div class="grid">
 				<div class="module" id="info1">
 					<p>T A R O T</p>
 				</div>
+
 				<div class="module" id="info2">
 					<div id="wrapD3Cube">
 						<div id="D3Cube" onclick="playAudio('audio/tarot.mp3')">
@@ -248,14 +269,26 @@
 				</div>
 				
 				<div class="module">
-					<p>A SUNDAY NIGHT</p>
-					<p class="title innerText">
+
+					<div class="card">
+    <div class="card__face card__face--front"><p>A SUNDAY NIGHT</p></div>
+    <div class="card__face card__face--back"><p class="title">
 						an upright two of wands
 					</p>
-					<p class="tag innerText">權杖 2 (正位)</p>
+					<p class="tag innerText">權杖 2 (正位)</p></div>
+  </div>
+
+					
+					
 				
 			</div>
 		</main>
+		<script>
+	    	var card = document.querySelector('.card');
+			card.addEventListener( 'click', function() {
+			  card.classList.toggle('is-flipped');
+			});
+	    </script>
 		<div class="footer">
 			<p><a href="playground.html">遊樂場</a></p>
 		</div>
