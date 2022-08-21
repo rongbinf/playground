@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1 user-scalable=0">
+		<title>COVID-19</title>
+		<meta name="description" content="百年大計">
+		<meta name="author" content="Hargow">
+		<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+		<link rel="icon" type="image/png" href="img/covid-19.ico">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+		<style>
+		*, *:before, *:after {
+			box-sizing: border-box;
+		}
+		body {
+			font-family: Arial, "Arial Unicode MS", sans-serif;
+			font-size: 0.8rem;
+			background: linear-gradient(90deg, #000000, #ffffff, #009688, #ffffff, #ffeb3b, #ffffff, #000000);
+		    background-size: 200% 200%;
+    		animation: gradient 20s ease-in-out infinite;
+		    height: 100vh;
+		}
+		@keyframes gradient {
+			0% {
+				background-position: 0% 50%;
+			}
+			50% {
+				background-position: 100% 50%;
+			}
+			100% {
+				background-position: 0% 50%;
+			}
+		}
+		main {
+			display: flex;
+		}
+		img {
+			max-width: 12%;
+		}
+		p, a {
+			color: #ffffff;
+		}
+		a:hover {
+			font-style: normal;
+			text-decoration: line-through;
+		}
+		::selection {
+    		background: #000; 
+    		color: #fff;
+		}
+		::-moz-selection {
+  		  	background: #000; 
+    		color: #fff;
+		}
+		::-webkit-selection {
+    		background: #000; 
+    		color: #fff;
+		}
+		#mode {
+			background-color: #ffffff25;
+			border: 1px solid #ffffff60;
+			position: absolute;
+		}
+		#mode:visited {
+			border: none;
+			background-color: #ffffff80;
+		}
+		#mode:active, #mode:focus {
+			border: none;
+			background-color: #ffffff60;
+		}
+		#mode:hover {
+			border: none;
+			background-color: #ffffff40;
+		}
+		.graham {
+			z-index: 1;
+			width: 200px;
+			height: 250px;
+			top: 20vh;
+   			left: 5vh;
+		}
+		.park {
+			z-index: 7;
+			width: 200px;
+			height: 100px;
+			top: 25vh;
+   			left: 8vh;
+		}
+		.rachel {
+			z-index: 6;
+			width: 300px;
+			height: 40px;
+			top: 60vh;
+   			left: 10vh;
+		}
+		.mike {
+			z-index: 5;
+			width: 30px;
+			height: 600px;
+			top: 10vh;
+   			left: 30vh;
+		}
+		.karen {
+			z-index: 4;
+			width: 100px;
+			height: 400px;
+			top: 45vh;
+   			left: 33vh;
+		}
+		.will {
+			z-index: 3;
+			width: 50px;
+			height: 50px;
+			top: 90vh;
+   			left: 30vh;
+		}
+		.sharon {
+			z-index: 2;
+			width: 150px;
+			height: 150px;
+			top: 70vh;
+   			left: 25vh;
+		}
+		.emma {
+			z-index: 1;
+			width: 200px;
+			height: 400px;
+			top: 35vh;
+   			left: 20vh;
+		}
+		</style>
+	</head>
+	<body>
+		<main>
+			<div>
+				<iframe src="audio/silence.mp3" allow="autoplay" id="audio" style="display: none"></iframe>
+				<audio autoplay loop>
+				  <source src="audio/covid-19.mp3" type="audio/mp3">
+				</audio>
+				<a onclick="playAudio('audio/covid-19.mp3')"><img src="img/player.webp">
+				<p>⤷ 1. <strong>play 'covid-19.mp3'</strong> (2:10)</p></a>
+			</div>
+			<div>
+				<p style="font-weight: 600;">2. let's mix:</p>
+				<a class="menu" onclick="playAudio('audio/graham.mp3')">graham<div class="graham" id="mode"></div></a>
+				<a class="menu" onclick="playAudio('audio/park.mp3')">park<div class="park" id="mode"></div></a>
+				<a class="menu" onclick="playAudio('audio/rachel.mp3')">rachel<div class="rachel" id="mode"></div></a>
+				<a class="menu" onclick="playAudio('audio/mike.mp3')">mike<div class="mike" id="mode"></div></a>
+				<a class="menu" onclick="playAudio('audio/karen.mp3')">karen<div class="karen" id="mode"></div></a>
+				<a class="menu" onclick="playAudio('audio/will.mp3')">will<div class="will" id="mode"></div></a>
+				<a class="menu" onclick="playAudio('audio/sharon.mp3')">sharon<div class="sharon" id="mode"></div></a>
+				<a class="menu" onclick="playAudio('audio/emma.mp3')">emma<div class="emma" id="mode"></div></a>
+			</div>
+		</main>
+		<script>
+			function playAudio(url) {
+				new Audio(url).play();
+			}
+	    </script>
+		<script type="text/javascript">
+			     document.documentElement.addEventListener(
+			        "touchstart",
+			        function(event) {
+			          if (event.touches.length > 1) {
+			            event.preventDefault();
+			          }
+			        },
+			        false
+			      );
+
+			      var lastTouchEnd = 0;
+			      document.documentElement.addEventListener(
+			        "touchend",
+			        function(event) {
+			          var now = Date.now();
+			          if (now - lastTouchEnd <= 300) {
+			            event.preventDefault();
+			          }
+			          lastTouchEnd = now;
+			        },
+			        false
+			      );
+
+			      document.addEventListener("gesturestart", function(event) {
+			        event.preventDefault();
+			      });
+		</script>
+	</body>
+</html>
