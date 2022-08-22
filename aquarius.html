@@ -17,6 +17,7 @@
 			font-family: Arial, "Arial Unicode MS", sans-serif;
 			font-size: 1rem;
 			background-color: #fff;
+			text-align: center;
 		}
 		main {
 			display: flex;
@@ -27,7 +28,9 @@
 		}
 		a {
 			text-decoration: underline;
-			color: #001fff;
+			color: #000;
+			position: absolute;
+    		top: 50%;
 		}
 		a:hover {
 			font-style: normal;
@@ -56,6 +59,12 @@
 		</style>
 	</head>
 	<body>
+		<script>
+			function playAudio(url) {
+				new Audio(url).play();
+			}
+	    </script>
+		<a id="trigger" onclick="playAudio('audio/Isaka.mp3')">♫</a>
 		<script type="text/javascript">
 			document.documentElement.addEventListener(
 			"touchstart",
