@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1 user-scalable=0">
+		<title>[ · ]</title>
+		<meta name="description" content="D I S C O V E R">
+		<meta name="author" content="Hargow">
+		<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+		<link rel="icon" type="image/png" href="img/discover.ico">
+		<style>
+		*, *:before, *:after {
+			box-sizing: border-box;
+		}
+		body {
+			font-family: Arial, "Arial Unicode MS", sans-serif;
+			font-size: 1rem;
+			background-color: #f4f4f4;
+			text-align: center;
+		}
+		main {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			margin: 3rem;
+		}
+		a {
+			text-decoration: underline;
+			color: #000;
+			position: absolute;
+    		top: 50%;
+		}
+		a:hover {
+			font-style: normal;
+			text-decoration: line-through;
+		}
+		::-webkit-scrollbar {
+		  display: none;
+		}
+		::selection {
+		background: #000;
+		color: #fff;
+		}
+		::-moz-selection {
+			background: #000;
+		color: #fff;
+		}
+		::-webkit-selection {
+		background: #000;
+		color: #fff;
+		}
+		.dot {
+		  height: 25px;
+		  width: 25px;
+		  background-color: #4f2828;
+		  border-radius: 50%;
+		  display: inline-block;
+		  position: absolute;
+		  top: 50%;
+		  cursor: pointer;
+		}
+		</style>
+	</head>
+	<body>
+		<script>
+			function playAudio(url) {
+				new Audio(url).play();
+			}
+	    </script>
+		<div class="dot" id="trigger" onclick="playAudio('audio/Discover.mp3')"></div>
+		<script type="text/javascript">
+			document.documentElement.addEventListener(
+			"touchstart",
+			function(event) {
+			if (event.touches.length > 1) {
+			event.preventDefault();
+			}
+			},
+			false
+			);
+			var lastTouchEnd = 0;
+			document.documentElement.addEventListener(
+			"touchend",
+			function(event) {
+			var now = Date.now();
+			if (now - lastTouchEnd <= 300) {
+			event.preventDefault();
+			}
+			lastTouchEnd = now;
+			},
+			false
+			);
+			document.addEventListener("gesturestart", function(event) {
+			event.preventDefault();
+			});
+		</script>
+	</body>
+</html>
