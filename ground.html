@@ -4,14 +4,15 @@
 		<meta charset="utf-8">
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1 user-scalable=0">
-		<title>[ · ]</title>
-		<meta name="description" content="D I S C O V E R">
+		<title>Ground</title>
+		<meta name="description" content="Ground">
 		<meta name="author" content="Hargow">
 		<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-		<link rel="icon" type="image/png" href="img/discover.ico">
+		<link rel="icon" type="image/png" href="img/ground.ico">
 		<style>
 		*, *:before, *:after {
 			box-sizing: border-box;
+			margin: 0;
 		}
 		body {
 			font-family: Arial, "Arial Unicode MS", sans-serif;
@@ -24,7 +25,6 @@
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
-			margin: 3rem;
 		}
 		a {
 			text-decoration: underline;
@@ -49,46 +49,32 @@
 		background: #000;
 		color: #fff;
 		}
-		.dot1 {
-		  height: 25px;
-		  width: 25px;
-		  background-color: #4f2828;
-		  border-radius: 50%;
-		  display: inline-block;
-		  position: absolute;
-		  cursor: pointer;
+		.ground {
+			position: absolute;
+			bottom: 0;
+			background-color: #5d4036;
+			height: 300px;
+			width: 100%;
 		}
-		.dot2 {
-		  height: 25px;
-		  width: 25px;
-		  border: 2px solid #4f2828;
-		  border-radius: 50%;
-		  display: inline-block;
-		  cursor: pointer;
-		  position: absolute;
-		  top: 50%;
-		}
-		.dot3 {
-		  height: 25px;
-		  width: 25px;
-		  background-color: #fff;
-		  border-radius: 50%;
-		  display: inline-block;
-		  cursor: pointer;
-		  position: absolute;
-		  bottom: 0%;
+		.seed {
+			position: absolute;
+			bottom: 0;
+			text-align: center;
+			writing-mode: vertical-rl;
+			text-orientation: upright;
+			color: #7e574a;
 		}
 		</style>
 	</head>
 	<body>
-		<script>
-			function playAudio(url) {
-				new Audio(url).play();
-			}
-	    </script>
-		<div class="dot1" id="trigger" onclick="playAudio('audio/Discover.mp3')"></div>
-		<a href="bei-wei-zhe.html"><div class="dot2"></div></a>
-		<a href="ground.html"><div class="dot3"></div></a>
+		
+		<div class="ground">
+		</div>
+
+		<div class="seed">
+			<p>我把我种在地里等台风过去</p>
+		</div>
+
 		<script type="text/javascript">
 			document.documentElement.addEventListener(
 			"touchstart",
