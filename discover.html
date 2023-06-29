@@ -26,9 +26,14 @@
 			justify-content: center;
 			align-items: center;
 		}
+		p {
+			text-align: left;
+			text-decoration: none;
+			margin: 10rem;
+		}
 		a {
-			text-decoration: underline;
 			color: #000;
+			text-decoration: none;
 		}
 		a:hover {
 			font-style: normal;
@@ -86,9 +91,9 @@
 				new Audio(url).play();
 			}
 	    </script>
-		<div class="dot1" id="trigger" onclick="playAudio('audio/Discover.mp3')"></div>
-		<a href="bei-wei-zhe.html"><div class="dot2"></div></a>
-		<a href="ground.html"><div class="dot3"></div></a>
+		<a onclick="playAudio('audio/Discover.mp3')"><p>🎵</p><div class="dot1" id="trigger"></div></a>
+		<a href="bei-wei-zhe.html"><p>one poem</p><div class="dot2"></div></a>
+		<a href="ground.html"><p>one sentence</p><div class="dot3"></div></a>
 		<script type="text/javascript">
 			document.documentElement.addEventListener(
 			"touchstart",
